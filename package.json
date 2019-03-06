@@ -1,0 +1,32 @@
+{
+  "name": "graphqltest",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "devtest": "export ROOT_URL=http://192.168.10.224.xip.io:5002&&export MONGO_URL=mongodb://localhost/graphql&&meteor -p 5002"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-http": "^1.5.12",
+    "apollo-link-ws": "^1.0.15",
+    "apollo-server-express": "^2.4.8",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "meteor-node-stubs": "^0.4.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}
